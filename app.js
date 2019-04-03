@@ -2,18 +2,33 @@ var express = require('express');
 var Airtable = require('airtable');
 
 var app = express();
-var base = new Airtable({apiKey: 'keyVjcU07cHQbToae'}).base('appdOBdOVVYq3gjom');
+var base = new Airtable({apiKey: 'keyVjcU07cHQbToae'}).base('appdOBdOVVYq3gjom'); // TODO: base for quote info
 
-base('Purchase Orders / Quotes').select({
-    // Selecting the first 3 records in Grid view:
-    maxRecords: 10,
-    view: "Grid view"
-}).eachPage(function page(records, fetchNextPage) {
-    // This function (`page`) will get called for each page of records; pagination at 100 records by default
+app.get('/', function(req, res) {
 
+})
+// test inputs
+var testjson = '{"HAUS1-COR-FUL": 1, "HAUS2-LUX-FUL": 2, "HAUS4-LUX-FUL": 1}';
+quoteItems = JSON.parse(testjson);
+
+// Print headers for columns
+console.log('SKU\t\t Vendor Product Name\t\t\t\t\t Qt.\t Price\t\t Total');
+
+base('Vendor Product Library').select({
+	fields: ['SKU', 'Vendor Product Name', 'Unit Price (CAD)'],
+	filterByFormula: 'SEARCH("HAUS", SKU) >= 1', // SKU begins with 'HAUS'
+}).eachPage(function page(records, fetchNextPage) { //func page called for each page of records; default pagination 100
     records.forEach(function(record) {
-		// test to list POs with costs
-        console.log('P.O.:\t', (record.get('Name')+"                  ").substring(0, 34), '\t\tCost:\t', record.get('Order Total (CAD)'));
+		var sku = record.get('SKU'); 
+		if (sku in quoteItems) { // Check if sku is contained in quote; if so, log and note quantity
+			console.log(
+				sku,'\t', 
+				(record.get('Vendor Product Name') + "            ").substring(0,50),'\t', 
+				quoteItems[sku], '\t', 
+				record.get('Unit Price (CAD)').toFixed(2), '\t', 
+				(record.get('Unit Price (CAD)')*quoteItems[sku]).toFixed(2)
+			); 
+		}
     });
 
     // To fetch the next page of records, call `fetchNextPage`.
