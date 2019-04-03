@@ -1,0 +1,15 @@
+{
+  "name": "fulhaus",
+  "version": "1.0.0",
+  "description": "Quote builder for Fulhaus",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kalin Otto",
+  "license": "ISC",
+  "dependencies": {
+    "airtable": "^0.5.10",
+    "express": "^4.16.4"
+  }
+}
