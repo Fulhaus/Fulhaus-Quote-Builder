@@ -1,6 +1,88 @@
+<!DOCTYPE html>
 <html>
-	<body>
-		<!--
+	<head>
+		<style>
+			input[type=number]{
+  				width: 80px;
+			} 
+			#themebar {
+				width: 10%;
+				float: left;
+				padding: 20px;
+				font-size: 1.2em;
+				text-align: right;
+			}
+			#inputfield {
+				width: 85%;
+				float: right;
+			}
+			#output {
+				position: absolute;
+				bottom: 50px;
+			}
+
+			#contactInfo {
+				padding-top: 20px;
+				float: left;
+			}
+		</style>
+	</head>
+
+<body>
+	<div id = 'themebar'>
+		Corporate<br>Millenial<br>Desert<br>Paradise<br>Lux
+	</div>
+	<form id='quoteform'>
+		<div id ='inputfield'>
+			Studio &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 1 Bedroom &nbsp 2 Bedrooms &nbsp 3 Bedrooms &nbsp 4 Bedrooms <br>
+			<input type='number' name='COR0'> <input type='number' name='HAUS1-COR-FUL'> <input type='number' name='HAUS2-COR-FUL'> <input type='number' name='HAUS3-COR-FUL'> <input type='number' name='HAUS4-COR-FUL'>
+			<br>
+			<input type='number' name='MIL0'> <input type='number' name='HAUS1-MIL-FUL'> <input type='number' name='HAUS2-MIL-FUL'> <input type='number' name='HAUS3-MIL-FUL'> <input type='number' name='HAUS4-MIL-FUL'>
+			<br>
+			<input type='number' name='DES0'> <input type='number' name='HAUS1-DES-FUL'> <input type='number' name='HAUS2-DES-FUL'> <input type='number' name='HAUS3-DES-FUL'> <input type='number' name='HAUS4-DES-FUL'>
+			<br>
+			<input type='number' name='PAR0'> <input type='number' name='HAUS1-PAR-FUL'> <input type='number' name='HAUS2-PAR-FUL'> <input type='number' name='HAUS3-PAR-FUL'> <input type='number' name='HAUS4-PAR-FUL'>
+			<br>
+			<input type='number' name='LUX0'> <input type='number' name='HAUS1-LUX-FUL'> <input type='number' name='HAUS2-LUX-FUL'> <input type='number' name='HAUS3-LUX-FUL'> <input type='number' name='HAUS4-LUX-FUL'>
+		</div>
+		<div id = 'contactInfo'>
+			Contact info:<br>
+			Name: <input type='text' name='clientname'> <br>
+			Email: <input type='email' name = 'clientemail'><br>
+			<input type='submit'>
+		</div>
+	</form>
+
+	<br>
+	<div id = 'output'>placeholder</div> <!-- Just used for testing JSON converter -->
+
+	<script>
+		const isValid = element => { return element.name && element.value; };
+		const formToJSON = elements => [].reduce.call(elements, (data, element) => {
+			if (isValid(element)) {
+				data[element.name] = element.value;	
+			}
+			//test line
+			document.getElementById('output').innerHTML = JSON.stringify(data);
+
+			return data;
+		}, {});
+
+		const handleFormSubmit = event => {
+			event.preventDefault();
+			const data = formToJSON(quoteform.elements);
+
+			var xreq = new XMLHttpRequest();
+			xreq.open("POST", 'http://localhost:8080', false); // sending to localhost for testing
+			xreq.send(JSON.stringify(data));
+		}
+
+		const form = document.getElementById('quoteform');
+		form.addEventListener('submit', handleFormSubmit);
+	</script>
+
+
+	<!--
 			TODO: Front-end webpage to determine client's quote requirements
 				- maximize info collected -- but don't want to discourage form follow-through
 					- essential info: # HiaB packages with BR number and theme, number of units, address, # addons, full service?
@@ -8,5 +90,6 @@
 
 				Use HTTP requests + expressjs to handle info requests?
 		 -->
-	</body>
+</body>
+
 </html>
