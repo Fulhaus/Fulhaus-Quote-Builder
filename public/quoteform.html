@@ -5,52 +5,100 @@
 			input[type=number]{
   				width: 80px;
 			} 
-			#themebar {
+			.labelCol {
 				width: 10%;
 				float: left;
-				padding: 20px;
-				font-size: 1.2em;
+				margin-top: 6px;
+				margin-right: 10px;
 				text-align: right;
 			}
-			#inputfield {
+			.inputCol {
 				width: 85%;
-				float: right;
+				float: left;
+				margin-top: 6px;
 			}
+			.row:after {
+				content: "";
+				display: table;
+				clear: both;
+			}
+
 			#output {
 				position: absolute;
 				bottom: 50px;
-			}
-
-			#contactInfo {
-				padding-top: 20px;
-				float: left;
 			}
 		</style>
 	</head>
 
 <body>
-	<div id = 'themebar'>
-		Corporate<br>Millenial<br>Desert<br>Paradise<br>Lux
-	</div>
 	<form id='quoteform'>
-		<div id ='inputfield'>
-			Studio &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 1 Bedroom &nbsp 2 Bedrooms &nbsp 3 Bedrooms &nbsp 4 Bedrooms <br>
-			<input type='number' name='COR0'> <input type='number' name='HAUS1-COR-FUL'> <input type='number' name='HAUS2-COR-FUL'> <input type='number' name='HAUS3-COR-FUL'> <input type='number' name='HAUS4-COR-FUL'>
-			<br>
-			<input type='number' name='MIL0'> <input type='number' name='HAUS1-MIL-FUL'> <input type='number' name='HAUS2-MIL-FUL'> <input type='number' name='HAUS3-MIL-FUL'> <input type='number' name='HAUS4-MIL-FUL'>
-			<br>
-			<input type='number' name='DES0'> <input type='number' name='HAUS1-DES-FUL'> <input type='number' name='HAUS2-DES-FUL'> <input type='number' name='HAUS3-DES-FUL'> <input type='number' name='HAUS4-DES-FUL'>
-			<br>
-			<input type='number' name='PAR0'> <input type='number' name='HAUS1-PAR-FUL'> <input type='number' name='HAUS2-PAR-FUL'> <input type='number' name='HAUS3-PAR-FUL'> <input type='number' name='HAUS4-PAR-FUL'>
-			<br>
-			<input type='number' name='LUX0'> <input type='number' name='HAUS1-LUX-FUL'> <input type='number' name='HAUS2-LUX-FUL'> <input type='number' name='HAUS3-LUX-FUL'> <input type='number' name='HAUS4-LUX-FUL'>
+		<div class='row'>
+			<div class = 'labelCol'></div>
+			<div class = 'inputCol'>Studio &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 1 Bedroom &nbsp 2 Bedrooms &nbsp 3 Bedrooms &nbsp 4 Bedrooms</div>
 		</div>
-		<div id = 'contactInfo'>
-			Contact info:<br>
-			Name: <input type='text' name='clientname'> <br>
-			Email: <input type='email' name = 'clientemail'><br>
-			<input type='submit'>
+		<div class='row'>
+			<div class = 'labelCol'>Corporate</div>
+			<div class = 'inputCol'>
+				<input type='number' min='0' name='COR0'> <input type='number' min='0' name='HAUS1-COR-FUL'> <input type='number' min='0' name='HAUS2-COR-FUL'> <input type='number' min='0' name='HAUS3-COR-FUL'> <input type='number' min='0' name='HAUS4-COR-FUL'>
+			</div>
 		</div>
+		<div class='row'>
+			<div class = 'labelCol'>Millenial</div>
+			<div class = 'inputCol'>
+				<input type='number' min='0' name='MIL0'> <input type='number' min='0' name='HAUS1-MIL-FUL'> <input type='number' min='0' name='HAUS2-MIL-FUL'> <input type='number' min='0' name='HAUS3-MIL-FUL'> <input type='number' min='0' name='HAUS4-MIL-FUL'>
+			</div>
+		</div>
+		<div class='row'>
+			<div class = 'labelCol'>Desert</div>
+			<div class = 'inputCol'>
+				<input type='number' min='0' name='DES0'> <input type='number' min='0' name='HAUS1-DES-FUL'> <input type='number' min='0' name='HAUS2-DES-FUL'> <input type='number' min='0' name='HAUS3-DES-FUL'> <input type='number' min='0' name='HAUS4-DES-FUL'>
+			</div>
+		</div>
+		<div class='row'>
+			<div class = 'labelCol'>Paradise</div>
+			<div class = 'inputCol'>
+				<input type='number' min='0' name='PAR0'> <input type='number' min='0' name='HAUS1-PAR-FUL'> <input type='number' min='0' name='HAUS2-PAR-FUL'> <input type='number' min='0' name='HAUS3-PAR-FUL'> <input type='number' min='0' name='HAUS4-PAR-FUL'>
+			</div>
+		</div>
+		<div class='row'>
+			<div class = 'labelCol'>Lux</div>
+			<div class = 'inputCol'>
+				<input type='number' min='0' name='LUX0'> <input type='number' min='0' name='HAUS1-LUX-FUL'> <input type='number' min='0' name='HAUS2-LUX-FUL'> <input type='number' min='0' name='HAUS3-LUX-FUL'> <input type='number' min='0' name='HAUS4-LUX-FUL'>
+			</div>
+		</div>
+		<div class = 'row'>
+			<div class = 'labelCol'>
+				<label for = 'projectname'>Project Name</label>
+			</div>
+			<div class = 'inputCol'>
+				<input type='text' name='projectname'>
+			</div>
+		</div>
+		<div class = 'row'>
+			<div class = 'labelCol'>
+				<label for = 'projectaddress'>Project Address</label>
+			</div>
+			<div class = 'inputCol'>
+				<input type='text' name='projectaddress'>
+			</div>
+		</div>
+		<div class = 'row'>
+			<div class = 'labelCol'>
+				<label for = 'clientname'>Name</label>
+			</div>
+			<div class = 'inputCol'>
+				<input type='text' name='clientname'>
+			</div>
+		</div>
+		<div class = 'row'>
+			<div class = 'labelCol'>
+				<label for = 'clientemail'>Email</label>
+			</div>
+			<div class = 'inputCol'>
+				<input type='email' name='clientemail'>
+			</div>
+		</div>
+		<input type ='submit'>
 	</form>
 
 	<br>
