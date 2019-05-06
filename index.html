@@ -54,7 +54,7 @@
 </div>
 	
 	
-<form>
+<form id="quoteform">
 	
 <div class="container">
       <div class="jumbotron" style="background-color:#FF4E24">
@@ -77,7 +77,7 @@
     </div>
     <div class="form-group">
       <label for="numberofunits">How many units do you manage?</label>
-      <select class="form-control" id="numberofunits">
+      <select class="form-control" name="numberofunits">
         <option>0-19</option>
         <option>20-99</option>
         <option>100+</option>
@@ -96,29 +96,29 @@
     <div class="form-group">
       <div class="form-group">
         <label for="inputAddress">Project Address</label>
-        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+        <input type="text" class="form-control" name="inputAddress" placeholder="1234 Main St">
       </div>
       <label for="inputAddress2">Address Line 2</label>
-      <input type="text" class="form-control" id="inputAddress2" placeholder="Apartments, units, or floor">
+      <input type="text" class="form-control" name="inputAddress2" placeholder="Apartments, units, or floor">
     </div>
     <div class="form-row">
       <div class="form-group col-md-3">
         <label for="inputCity">City</label>
-        <input type="text" class="form-control" id="inputCity">
+        <input type="text" class="form-control" name="inputCity">
       </div>
       <div class="form-group col-md-4">
         <label for="inputState">State/Province</label>
-        <input type="text" class="form-control" id="inputState">
+        <input type="text" class="form-control" name="inputState">
       </div>
       <div class="form-group col-md-5">
         <label for="inputZip">Postal Code</label>
-        <input type="text" class="form-control" id="inputZip">
+        <input type="text" class="form-control" name="inputZip">
       </div>
     </div>
 	<div class="form=row">
     <div class="form-group">
         <label for="deliverydate">Requested Delivery Date </label>
-        <input type="text" class="form-control" id="deliverydate" placeholder="Please note can not be earlier than 3 weeks from deposit. ">
+        <input type="text" class="form-control" name="deliverydate" placeholder="Please note can not be earlier than 3 weeks from deposit. ">
   </div>
 		</div>
 </div>
@@ -144,19 +144,19 @@
   <tbody style:"color:black">
 	 <tr>
       <th scope="row">No Style Preference</th>
-		 <td><input type="number" class="form-control" id="HAUS0"></td>
-		  <td><input type="number" class="form-control" id="HAUS1"></td>
-		  <td><input type="number" class="form-control" id="HAUS2"></td>
-		  <td><input type="number" class="form-control" id="HAUS3"></td>
-		  <td><input type="number" class="form-control" id="HAUS4"></td>
+		 <td><input type="number" class="form-control" name="HAUS0"></td>
+		  <td><input type="number" class="form-control" name="HAUS1"></td>
+		  <td><input type="number" class="form-control" name="HAUS2"></td>
+		  <td><input type="number" class="form-control" name="HAUS3"></td>
+		  <td><input type="number" class="form-control" name="HAUS4"></td>
     </tr>
     <tr>
       <th scope="row">Corporate</th>
-	      <td><input type="number" class="form-control" id="HAUS0-COR"></td>
-		  <td><input type="number" class="form-control" id="HAUS1-COR"></td>
-		  <td><input type="number" class="form-control" id="HAUS2-COR"></td>
-		  <td><input type="number" class="form-control" id="HAUS3-COR"></td>
-		  <td><input type="number" class="form-control" id="HAUS4-COR"></td>
+	      <td><input type="number" class="form-control" name="HAUS0-COR"></td>
+		  <td><input type="number" class="form-control" name="HAUS1-COR"></td>
+		  <td><input type="number" class="form-control" name="HAUS2-COR"></td>
+		  <td><input type="number" class="form-control" name="HAUS3-COR"></td>
+		  <td><input type="number" class="form-control" name="HAUS4-COR"></td>
     </tr>
     <tr>
 		<th scope="row">Millenial</th>
@@ -244,121 +244,121 @@
   <div class="form-group row">
     <label for="ADD-LINEN-FULL" class="col-sm-8 col-form-label">Add on: Linen Package - Full (Sofa Bed)</label>
     <div class="col-sm-3">
-      <input type="number" class="form-control" id="col-sm-3">
+      <input type="number" class="form-control" name="ADD-LINEN-FULL">
     </div>
 	   </div>
 			 <div class="form-group row">
     <label for="ADD-LINEN-QUEEN" class="col-sm-8 col-form-label">Add on: Linen Package - Queen</label>
     <div class="col-sm-3">
-      <input type="number" class="form-control" id="ADD-LINEN-QUEEN">
+      <input type="number" class="form-control" name="ADD-LINEN-QUEEN">
     </div>
 		</div>
 			
 <div class="form-group row">
     <label for="ADD-LINEN-KING" class="col-sm-8 col-form-label">Add on: Linen Package - King</label>
     <div class="col-sm-3">
-      <input type="number" class="form-control" id="ADD-LINEN-KING">
+      <input type="number" class="form-control" name="ADD-LINEN-KING">
     </div> 
 </div>
 			
 <div class="form-group row">
     <label for="ADD-BATH" class="col-sm-8 col-form-label">Add on: Additional Bathroom</label>
     <div class="col-sm-3">
-      <input type="number" class="form-control" id="ADD-BATH">
+      <input type="number" class="form-control" name="ADD-BATH">
     </div> 
 </div>
 	  
 <div class="form-group row">
     <label for="ADD-BATHCURT" class="col-sm-8 col-form-label">Add on: Bathroom Curtain, liner, rings and bathmat</label>
     <div class="col-sm-3">
-      <input type="number" class="form-control" id="ADD-BATHCURT">
+      <input type="number" class="form-control" name="ADD-BATHCURT">
     </div> 
 </div>
 <div class="form-group row">
     <label for="ADD-BATHLIN" class="col-sm-8 col-form-label">Add on: Bath Linen Packages ( with turnover )</label>
     <div class="col-sm-3">
-      <input type="number" class="form-control" id="ADD-BATHLIN">
+      <input type="number" class="form-control" name="ADD-BATHLIN">
     </div> 
 </div>
 <div class="form-group row">
     <label for="ADD-BDRM" class="col-sm-8 col-form-label">Add on: Additional Bedroom</label>
     <div class="col-sm-3">
-      <input type="number" class="form-control" id="ADD-BDRM">
+      <input type="number" class="form-control" name="ADD-BDRM">
     </div> 
 </div>	
 
 <div class="form-group row">
     <label for="ADD-LIVING" class="col-sm-8 col-form-label">Add on: Additional Living Room</label>
     <div class="col-sm-3">
-      <input type="number" class="form-control" id="ADD-LIVING">
+      <input type="number" class="form-control" name="ADD-LIVING">
     </div> 
 </div>		
 
 <div class="form-group row">
     <label for="ADD-43TV" class="col-sm-8 col-form-label">Add On: Additional 43" TV with wall mount </label>
     <div class="col-sm-3">
-      <input type="number" class="form-control" id="ADD-43TV">
+      <input type="number" class="form-control" name="ADD-43TV">
     </div> 
 </div>
 		
 <div class="form-group row">
     <label for="ADD-CURT" class="col-sm-8 col-form-label">Add on: Curtains + Rod</label>
     <div class="col-sm-3">
-      <input type="number" class="form-control" id="ADD-CURT">
+      <input type="number" class="form-control" name="ADD-CURT">
     </div> 
 </div>
 <div class="form-group row">
     <label for="ADD-DESK" class="col-sm-8 col-form-label">Add on: Desk / Chair</label>
     <div class="col-sm-3">
-      <input type="number" class="form-control" id="ADD-DESK">
+      <input type="number" class="form-control" name="ADD-DESK">
     </div> 
 </div>
 <div class="form-group row">
     <label for="ADD-HOOK" class="col-sm-8 col-form-label">Add On: Entry Hook </label>
     <div class="col-sm-3">
-      <input type="number" class="form-control" id="ADD-HOOK">
+      <input type="number" class="form-control" name="ADD-HOOK">
     </div> 
 </div>
 <div class="form-group row">
     <label for="ADD-SOFA" class="col-sm-8 col-form-label">Add On: Sofa Bed </label>
     <div class="col-sm-3">
-      <input type="number" class="form-control" id="ADD-SOFA">
+      <input type="number" class="form-control" name="ADD-SOFA">
     </div> 
 </div>
 <div class="form-group row">
     <label for="ADD-RECORD" class="col-sm-8 col-form-label">Add On: Record Player </label>
     <div class="col-sm-3">
-      <input type="number" class="form-control" id="ADD-RECORD">
+      <input type="number" class="form-control" name="ADD-RECORD">
     </div> 
 </div>
 <div class="form-group row">
 			<label for="ADD-TABLET" class="col-sm-8 col-form-label">Add On: Tablet </label>
     <div class="col-sm-3">
-      <input type="number" class="form-control" id="ADD-TABLET">
+      <input type="number" class="form-control" name="ADD-TABLET">
     </div> 
 </div>
 		<div class="form-group row">
 		<label for="ADD-STOOL" class="col-sm-8 col-form-label">Add On: Stool </label>
     <div class="col-sm-3">
-      <input type="number" class="form-control" id="ADD-STOOL">
+      <input type="number" class="form-control" name="ADD-STOOL">
     </div> 
 </div>
 		<div class="form-group row">
 	<label for="ADD-PATIO" class="col-sm-8 col-form-label">Add On: Patio </label>
     <div class="col-sm-3">
-      <input type="number" class="form-control" id="ADD-Patio">
+      <input type="number" class="form-control" name="ADD-Patio">
     </div> 
 </div>
 		<div class="form-group row">
 	<label for="ADD-BALC" class="col-sm-8 col-form-label">Add On: Balcony </label>
     <div class="col-sm-3">
-      <input type="number" class="form-control" id="ADD-Balcony">
+      <input type="number" class="form-control" name="ADD-Balcony">
     </div> 
 </div>
 		<div class="form-group row">
 	  <label for="ADD-KITCH" class="col-sm-8 col-form-label">Add On: Kitchen Package </label>
     <div class="col-sm-3">
-      <input type="number" class="form-control" id="ADD-KITCH">
+      <input type="number" class="form-control" name="ADD-KITCH">
     </div> 
 </div>
 	    
@@ -378,13 +378,13 @@
   <div class="form-group row">
     <label for="ADD-KINGBED" class="col-sm-8 col-form-label">Upgrade: King Bed </label>
     <div class="col-sm-3">
-      <input type="number" class="form-control" id="ADD-KINGBED">
+      <input type="number" class="form-control" name="ADD-KINGBED">
     </div>
 	   </div>
 			 <div class="form-group row">
     <label for="ADD-55TV" class="col-sm-8 col-form-label">Upgrade: 55" TV</label>
     <div class="col-sm-3">
-      <input type="number" class="form-control" id="ADD-55TV">
+      <input type="number" class="form-control" name="ADD-55TV">
     </div>
 		</div>
 		</div>
@@ -434,7 +434,7 @@
 </div>
 </div>
 	<div align="center">
-	<button type="submit" class="btn btn-primary my-10">Submit</button>
+	<input type="submit" class="btn btn-primary my-10">
 	</div>
 </form>	
 	 </div>
@@ -447,12 +447,42 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <p>Copyright © Fulhausinc. All rights reserved.</p>
-      </div>
+		<p>Copyright © Fulhausinc. All rights reserved.</p>
+	  </div>
+	  <div id = 'output'>placeholder</div> <!-- Just used for testing JSON converter -->
     </div>
   </div>
 </footer>
+
+
 	</body>
+
+	
+	<script>
+		const isValid = element => { return element.name && element.value; };
+		const formToJSON = elements => [].reduce.call(elements, (data, element) => {
+			if (isValid(element)) {
+				data[element.name] = element.value;	
+			}
+			//test line
+			document.getElementById('output').innerHTML = JSON.stringify(data);
+
+			return data;
+		}, {});
+
+		const handleFormSubmit = event => {
+			event.preventDefault();
+			const data = formToJSON(quoteform.elements);
+
+			var xreq = new XMLHttpRequest();
+			xreq.open("POST", 'http://localhost:8080', false); // sending to localhost for testing
+			xreq.send(JSON.stringify(data));
+		}
+
+		const form = document.getElementById('quoteform');
+		form.addEventListener('submit', handleFormSubmit);
+	</script>
+
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 <script src="public/js/jquery-1.11.3.min.js"></script> 
 <!-- Include all compiled plugins (below), or include individual files as needed --> 
