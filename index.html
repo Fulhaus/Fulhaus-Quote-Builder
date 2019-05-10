@@ -129,7 +129,7 @@
     <h3 align="center"> Pick your Haus in a Box Packages</h3>
     
  
-	  <div style="background-color: grey text: black" >
+	  <div style="background-color: grey; text: black" >
 		  <table class="table">
 			   <thead>
     <tr>
@@ -398,7 +398,7 @@
     <h3 align="center"> Pick your Services</h3>
     
  
-	  <div style="background-color: grey text: black" >
+	  <div style="background-color: grey; text: black" >
 		  <table class="table">
 			   <thead>
     <tr>
@@ -475,7 +475,7 @@
 			const data = formToJSON(quoteform.elements);
 
 			var xreq = new XMLHttpRequest();
-			xreq.open("POST", 'http://localhost:8080', false); // sending to localhost for testing
+			xreq.open("POST", 'https://9ib2v5kyr7.execute-api.us-east-2.amazonaws.com/default/quoteFormHandler', false); // sending to localhost for testing
 			xreq.send(JSON.stringify(data));
 		}
 
