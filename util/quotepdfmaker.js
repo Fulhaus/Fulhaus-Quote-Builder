@@ -9,18 +9,22 @@ var fonts = {
 		italics: 'Helvetica-Oblique',
 		bolditalics: 'Helvetica-BoldOblique'
 	},
-  };
+};
 
 const doc = new pdfmake(fonts);
 const base = new Airtable({apiKey: 'keyVjcU07cHQbToae'}).base('appdOBdOVVYq3gjom'); // TODO: base for quote info
 
-var quoteid = 'recabCZXITS5lnlih';
+var quoteid = 'recCQ6b4kMwQElcLr';
 makePDF(quoteid);
 
 async function getQuoteStream(id) {
+	console.log(id);
 	var q = await makePDF(id);
+	console.log("madePDF returns");
 	var q2 = await buildQuoteBody(q.rec, q.head);
+	console.log("buildQuoteBody returns");
 	var pdf = await buildPDF(q2.head, q2.body, q2.sum);
+	console.log("buildPDF returns");
 	return new Promise(function(resolve, reject) {
 		pdf.pipe(fs.createWriteStream(__dirname+'/temp/'+id+'.pdf'));
 		pdf.on('end', function() {
@@ -28,6 +32,7 @@ async function getQuoteStream(id) {
 			resolve ('/temp/'+id+'.pdf');
 		});
 		pdf.on('error', function(err) {
+			console.log(err);
 			reject(err);
 		});
 	}).catch(function(reason) {
@@ -39,6 +44,7 @@ function makePDF(quoteID) {
 	return new Promise(function(resolve, reject) {
 		base('Generated Quotes').find(quoteID, function(err, record) {
 			if (err) { 
+				console.log(err);
 				reject(err); 
 			}
 			// Gather info to populate pdf
@@ -68,6 +74,7 @@ function buildQuoteBody(quoteRecord, quoteHeader) {
 		for (i = 0; i < len; i++) {
 			base('Quote Line Items').find(recordArray[i], function(err, record) {
 				if (err) {
+					console.log(err);
 					reject(err);
 				}
 				var row = [];
@@ -201,9 +208,9 @@ function buildPDF(qhead, qbody, sum) {
 		// TODO: instead of piping, return pdfDoc as a readable stream, which we read from directly for email attachment
 		//pdfDoc.pipe(fs.createWriteStream('document.pdf'));
 		
-		//pdfDoc.on('end', function() {
+		pdfDoc.on('end', function() {
 			resolve(pdfDoc);
-		//});
+		});
 
 		pdfDoc.on('error', function(err) {
 			reject(err);

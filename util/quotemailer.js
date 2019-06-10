@@ -19,18 +19,18 @@ async function main(sendTo){
 	});
 
   // send mail with defined transport object
-	var pdfpath = await pdfmaker.getQuoteStream('recabCZXITS5lnlih');
+	var pdfpath = await pdfmaker.getQuoteStream('recCQ6b4kMwQElcLr');
 	console.log(pdfpath);
 	let info = await transporter.sendMail({
 		from: '"Fulhaus Auto-Quote" <info@fulhaus.com>', // sender address
-		to: sendTo, // list of receivers
+		to: "kalin@fulhaus.com", // list of receivers
 		//cc: "info@fulhaus.com",
     	subject: "heres your god damn quote", // Subject line
     	text: "The provided quote is an estimate. Taxes, shipping and handling, and industry discounts may all affect the final price. Please contact our team for more info!", // plain text body
 		attachments: [
 			{
 				filename: 'quote.pdf',
-				path: pdfpath
+				path: __dirname+pdfpath
 			}
 		]
 	});
